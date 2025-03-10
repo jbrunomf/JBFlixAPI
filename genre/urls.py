@@ -1,6 +1,6 @@
 from django.urls import path
-from genre.views import genre_list_view
+from genre.views import GenreCreateListView
 
 urlpatterns = [
-    path('', genre_list_view, name='genre_list'),
+    path('', GenreCreateListView.as_view(), name='genre_list'),
 ]

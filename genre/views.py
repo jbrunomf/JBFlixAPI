@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-def genre_list_view(request):
+from genre.models import Genre
+from genre.serializers import GenreSerializer
+
+
+class GenreCreateListView(generics.ListCreateAPIView):
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
